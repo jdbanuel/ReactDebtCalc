@@ -2,7 +2,7 @@ import React from 'react';
 
 function Navbar() {
     return (
-        <div className="flex justify-start bg-purple-500 h-10 shadow-2xl text-gray-100">
+        <div className="w-full flex justify-start bg-purple-500 h-10 shadow-2xl text-gray-100">
             <div className="flex flex-shrink-0 text-xl items-center tracking-tight mx-3 font-semibold">
                 <a>Debt Repayment Calculator</a>
             </div>
