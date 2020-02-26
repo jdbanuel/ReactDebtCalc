@@ -6,14 +6,18 @@ class CardDisplay extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            numMonths: '',
+            monthlyPayment: '',
             debt: '',
-            interestRate: ''
+            interestRate: '',
+            totalDebt: '',
+            interestAccrued: ''
         };
 
         this.handleDebtChange = this.handleDebtChange.bind(this);
         this.handleInterestChange = this.handleInterestChange.bind(this);
-        this.handleMonthsChange = this.handleMonthsChange.bind(this);
+        this.handleMonthlyPaymentChange = this.handleMonthlyPaymentChange.bind(
+            this
+        );
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
@@ -25,7 +29,7 @@ class CardDisplay extends React.Component {
         this.setState({ interestRate: event.target.value });
     }
 
-    handleMonthsChange(event) {
+    handleMonthlyPaymentChange(event) {
         this.setState({ numMonths: event.target.value });
     }
 
@@ -35,8 +39,8 @@ class CardDisplay extends React.Component {
                 this.state.debt +
                 ', APR: ' +
                 this.state.interestRate +
-                ', and numMonths: ' +
-                this.state.numMonths +
+                ', and Monthly Payment: ' +
+                this.state.monthlyPayment +
                 '.'
         );
         event.preventDefault();
@@ -57,9 +61,9 @@ class CardDisplay extends React.Component {
                 />
                 <MonthlyPaymentCalcForm
                     class="flex justify-center"
-                    handleMonthsChange={this.handleMonthsChange}
+                    handleMonthlyPaymentChange={this.handleMonthlyPaymentChange}
                     handleFormSubmit={this.handleFormSubmit}
-                    numMonths={this.state.numMonths}
+                    MonthlyPaymentCalcForm={this.state.monthlyPayment}
                 />
             </div>
         );

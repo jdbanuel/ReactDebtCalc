@@ -17,7 +17,7 @@ class DebtAPRForm extends React.Component {
                                 placeholder="Total Debt"
                                 onChange={this.props.handleDebtChange}
                                 value={this.props.debt}
-                                type="text"
+                                type="number"
                             />
                         </label>
                         <label
@@ -31,7 +31,7 @@ class DebtAPRForm extends React.Component {
                                 placeholder="Interest Rate"
                                 onChange={this.props.handleInterestChange}
                                 value={this.props.interestRate}
-                                type="text"
+                                type="number"
                             />
                         </label>
                     </div>

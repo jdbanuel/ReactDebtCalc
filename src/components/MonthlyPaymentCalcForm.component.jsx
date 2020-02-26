@@ -13,14 +13,14 @@ class MonthlyPaymentCalcForm extends React.Component {
                             className="block text-gray-700 text-sm font-bold mb-3"
                             htmlFor="numberOfMonths"
                         >
-                            Month
+                            Monthly Payment
                             <input
                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 id="numberOfMonths"
-                                placeholder="Months to Payoff"
-                                onChange={this.props.handleMonthsChange}
-                                value={this.props.numMonths}
-                                type="text"
+                                placeholder="Monthly Payment Amount"
+                                onChange={this.props.handleMonthlyPaymentChange}
+                                value={this.props.monthlyPayment}
+                                type="number"
                             />
                         </label>
                     </div>
