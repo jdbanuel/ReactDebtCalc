@@ -19,18 +19,60 @@ class CardDisplay extends React.Component {
             this
         );
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.checkIfValidCharacter = this.checkIfValidCharacter.bind(this);
+    }
+
+    checkIfValidCharacter(character) {
+        let validChars = {
+            '1': 1,
+            '2': 1,
+            '3': 1,
+            '4': 1,
+            '5': 1,
+            '6': 1,
+            '7': 1,
+            '8': 1,
+            '9': 1,
+            '0': 1,
+            ',': 1,
+            '.': 1
+        };
+
+        if (!character) {
+            return true;
+        } else {
+            return validChars[character];
+        }
     }
 
     handleDebtChange(event) {
-        this.setState({ debt: event.target.value });
+        if (
+            this.checkIfValidCharacter(
+                event.target.value[event.target.value.length - 1]
+            )
+        ) {
+            this.setState({ debt: event.target.value });
+        }
     }
 
     handleInterestChange(event) {
-        this.setState({ interestRate: event.target.value });
+        if (
+            this.checkIfValidCharacter(
+                event.target.value[event.target.value.length - 1]
+            )
+        ) {
+            this.setState({ interestRate: event.target.value });
+        }
     }
 
     handleMonthlyPaymentChange(event) {
-        this.setState({ numMonths: event.target.value });
+        if (
+            this.checkIfValidCharacter(
+                event.target.value[event.target.value.length - 1]
+            )
+        ) {
+            this.setState({ numMonths: event.target.value });
+        }
     }
 
     handleFormSubmit(event) {

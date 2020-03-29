@@ -20,7 +20,7 @@ class MonthlyPaymentCalcForm extends React.Component {
                                 placeholder="Monthly Payment Amount"
                                 onChange={this.props.handleMonthlyPaymentChange}
                                 value={this.props.monthlyPayment}
-                                type="number"
+                                pattern="[0-9]*"
                             />
                         </label>
                     </div>
